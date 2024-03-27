@@ -2,6 +2,8 @@ import java.util.Comparator;
 
 /**
  * Things that know how to sort homogeneous collections.
+ * 
+ * @author Samuel A. Rebelsky 
  */
 public interface Sorter {
   /**

@@ -1,5 +1,7 @@
 /**
  * Tests of MergeSort.
+ * 
+ * @author Samuel A. Rebelsky 
  */
 public class MergeSortTester extends SortTester {
 

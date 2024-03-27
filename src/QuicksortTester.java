@@ -1,5 +1,7 @@
 /**
  * Tests of Quicksort.
+ * 
+ * @author Samuel A. Rebelsky 
  */
 public class QuicksortTester extends SortTester {
 

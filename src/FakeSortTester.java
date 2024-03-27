@@ -1,5 +1,7 @@
 /**
  * Tests of our FakeSorter.
+ * 
+ * @author Samuel A. Rebelsky 
  */
 public class FakeSortTester extends SortTester {
 

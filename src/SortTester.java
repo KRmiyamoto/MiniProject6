@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Tests of Sorter objects.
  *
- * @author Your Name
+ * @author Keely Miyamoto
  */
 public class SortTester {
 
@@ -44,5 +44,45 @@ public class SortTester {
     sorter.sort(original, (x, y) -> x.compareTo(y));
     assertArrayEquals(original, expected);
   } // orderedStringTest
+
+  @Test
+  public void unorderedStringTest() {
+    String[] original = {"bravo", "delta", "foxtrot", "charlie", "alpha"};
+    String[] expected = {"alpha", "bravo", "charlie", "delta", "foxtrot"};
+    sorter.sort(original, (x,y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  } // emptyStringArrayTest
+
+  @Test
+  public void emptyStringArrayTest() {
+    String[] original = {};
+    String[] expected = {};
+    sorter.sort(original, (x,y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  } // emptyStringArrayTest
+
+  @Test
+  public void singleEltArrayTest() {
+    String[] original = {"alpha"};
+    String[] expected = {"alpha"};
+    sorter.sort(original, (x,y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  } // singleEltArrayTest
+
+  @Test
+  public void arrayWithDuplicatesTest() {
+    String[] original = {"foxtrot", "alpha", "foxtrot", "bravo", "bravo", "charlie", "alpha", "delta"};
+    String[] expected = {"alpha", "alpha", "bravo", "bravo", "charlie", "delta", "foxtrot", "foxtrot"};
+    sorter.sort(original, (x,y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  } // arrayWithDuplicatesTest
+
+  @Test
+  public void equalEltsIntegerArrayText() {
+    Integer[] original = {1, 1, 1, 1};
+    Integer[] expected = {1, 1, 1, 1};
+    sorter.sort(original, (x,y) -> x.compareTo(y));
+    assertArrayEquals(original, expected);
+  } // arrayWithDuplicatesTest
 
 } // class SortTester
