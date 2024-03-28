@@ -49,28 +49,6 @@ public class InsertionSort implements Sorter {
       // Associate current with its appropriate index.
       values[comparingIndex + 1] = current;
     } // for
-  } // sort(T[], Comparator<? super T>
+  } // sort(T[], Comparator<? super T>)
 
-  public static void main(String[] args) {
-    Sorter sorter = new InsertionSort();
-    String[] arr = {};
-    sorter.sort(arr, (x, y) -> x.compareTo(y));
-    String[] arr0 = {"a"};
-    sorter.sort(arr0, (x, y) -> x.compareTo(y));
-    String[] arr1 = {"a", "b", "c", "d"};
-    sorter.sort(arr1, (x, y) -> x.compareTo(y));
-    String[] arr2 = {"a", "c", "d", "b"};
-    sorter.sort(arr2, (x, y) -> x.compareTo(y));
-    String[] arr3 = {"a", "a", "a", "a"};
-    sorter.sort(arr3, (x, y) -> x.compareTo(y));
-    String[] arr4 = {"d", "c", "b", "a"};
-    sorter.sort(arr4, (x, y) -> x.compareTo(y));
-    java.io.PrintWriter pen = new java.io.PrintWriter(System.out, true);
-    pen.println(Arrays.toString(arr));
-    pen.println(Arrays.toString(arr0));
-    pen.println(Arrays.toString(arr1));
-    pen.println(Arrays.toString(arr2));
-    pen.println(Arrays.toString(arr3));
-    pen.println(Arrays.toString(arr4));
-  }
 } // class InsertionSort

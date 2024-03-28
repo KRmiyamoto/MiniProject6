@@ -37,7 +37,7 @@ public class MergeSort implements Sorter {
   } // sort(T[], Comparator<? super T>
 
   /**
-   * Merge the values from positions [lo..mid) and [mid..hi) back into
+   * Merge the values from positions [lo, mid) and [mid, hi) back into
    * the same part of the array.
    *
    * Preconditions: Each subarray is sorted accorting to comparator.
@@ -56,17 +56,17 @@ public class MergeSort implements Sorter {
         } else {
           values[valsIndex] = unsorted[rIndex];
           rIndex++;
-        }
+        } // else
       } else if (lIndex < (mid - lo)) {
         values[valsIndex] = unsorted[lIndex];
         lIndex++;
       } else {
         values[valsIndex] = unsorted[rIndex];
         rIndex++;
-      }
+      } // else
       valsIndex++;
-    }
-  } // merge
+    } // while
+  } // merge(T[], int, int, int, Comparator<? super T>)
 
 
   /**
@@ -84,29 +84,6 @@ public class MergeSort implements Sorter {
     mergeSort(vals, mid, hi, comparator);
 
     merge(vals, lo, mid, hi, comparator);
-  } // mergeSort
-
-  public static void main(String[] args) {
-    Sorter sorter = new InsertionSort();
-    String[] arr = {};
-    sorter.sort(arr, (x, y) -> x.compareTo(y));
-    String[] arr0 = {"a"};
-    sorter.sort(arr0, (x, y) -> x.compareTo(y));
-    String[] arr1 = {"a", "b", "c", "d"};
-    sorter.sort(arr1, (x, y) -> x.compareTo(y));
-    String[] arr2 = {"a", "c", "d", "b"};
-    sorter.sort(arr2, (x, y) -> x.compareTo(y));
-    String[] arr3 = {"a", "a", "a", "a"};
-    sorter.sort(arr3, (x, y) -> x.compareTo(y));
-    String[] arr4 = {"d", "c", "b", "a"};
-    sorter.sort(arr4, (x, y) -> x.compareTo(y));
-    java.io.PrintWriter pen = new java.io.PrintWriter(System.out, true);
-    pen.println(Arrays.toString(arr));
-    pen.println(Arrays.toString(arr0));
-    pen.println(Arrays.toString(arr1));
-    pen.println(Arrays.toString(arr2));
-    pen.println(Arrays.toString(arr3));
-    pen.println(Arrays.toString(arr4));
-  }
+  } // mergeSort(T[], int, int, Comparator<? super T>)
 
 } // class MergeSort
