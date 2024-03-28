@@ -15,3 +15,5 @@ Acknowledgements:
 -Quicksort (course reading, written by SamR): Describes the concepts behind the quicksort algorithm.
 -Lab: Merge Sort: Course lab completed with Tim Yu. My implementation of merge sort was developed using code written with Tim during this lab.
 -https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html: Documentation for the Comparator Interface.
+-https://en.wikipedia.org/wiki/Timsort: Article on TimSort.
+-https://www.geeksforgeeks.org/timsort/: Example of implementation of TimSort in Java.
