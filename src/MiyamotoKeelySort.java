@@ -91,7 +91,7 @@ public class MiyamotoKeelySort implements Sorter {
     Sorter mySorter = new MiyamotoKeelySort();
     Integer[] arr0 = {2, 3, 5, 1, 7, 6, 1, 1, 2, 9, 2, 0};
     Integer[] arr1 = {};
-    Integer[] arr2 = {1};
+    String[] arr2 = {"one"};
     Integer[] arr3 = {2, 2, 2, 2};
     Integer[] arr4 = {1, 2, 3, 4};
     Integer[] arr5 = {4, 3, 2, 1};
