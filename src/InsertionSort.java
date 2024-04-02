@@ -33,21 +33,28 @@ public class InsertionSort implements Sorter {
 
   @Override
   public <T> void sort(T[] values, Comparator<? super T> order) {
-    // Compare each element in values to previous elements, beginning with index 1.
-    for (int i = 1; i < values.length; i++) {
-      // Save current (ith) element of values.
-      T current = values[i];
-      // Track the previous indexes, against which we will compare the current element.
-      int comparingIndex = i - 1;
-      // While comparingIndex is a valid index in values and current is less than the element at comparingIndex,
-      // shift elements in values to the right.
-      while ((comparingIndex >= 0) && (order.compare(values[comparingIndex], current) > 0)) {
-        values[comparingIndex + 1] = values[comparingIndex];
-        comparingIndex--;
-      } // while
-      // Associate current with its appropriate index.
-      values[comparingIndex + 1] = current;
-    } // for
+    insertionSort(values, 0, values.length, order);
   } // sort(T[], Comparator<? super T>)
 
+  /**
+   * Helper function to implement a version of insertion sort that takes lower and upper bounds as parameters.
+   */
+  static <T> void insertionSort(T[] values, int lb, int ub, Comparator<? super T> comparator) {
+    // For each index between the upper and lower bound, exclusive...
+    for (int i = lb + 1; i < (ub - lb); i++) {
+      // Store element of values at index i
+      T current = values[i];
+      // Find previous index
+      int previous = i - 1;
+      // While 0 <= previous, and the element at previous index follows the current element
+      while (0 <= previous && (comparator.compare(values[previous], current) > 0)) {
+        // Move previous one index to the right, decrement previous
+        values[previous + 1] = values[previous];
+        previous--;
+      } // while
+
+      // Set current as the element at the index to the right of 'previous'
+      values[previous + 1] = current;                  
+    } // for
+  } // insertionSort(T[], int, int, comparator)
 } // class InsertionSort

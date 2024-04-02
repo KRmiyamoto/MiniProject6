@@ -10,9 +10,9 @@ Description: This assignment explores the implementation of sorting algorithms, 
 
 Acknowledgements: 
 
--Mini-Project 6: Sorting out sorting (written by SamR)
+-Mini-Project 6: Sorting out sorting (written by SamR): Instructions for project completion.
 
--Sorting basics (course reading, written by SamR): Describes some basic approaches to developing sorting methods.
+-Sorting basics (course reading, written by SamR): Describes some basic approaches to developing sorting methods, including insertion sort.
 
 -Merge sort (course reading, written by SamR): Describes the merge sort algorithm; our first exploration of an O(nlogn) algorithm.
 

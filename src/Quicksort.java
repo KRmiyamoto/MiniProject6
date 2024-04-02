@@ -54,29 +54,29 @@ public class Quicksort implements Sorter {
    * @return Returns an integer the represents the index of the pivot.
    */
   private static <T> int partition(T[] values, int lb, int ub, Comparator<? super T> comparator) {
-    // set pivot at midpoint of values
+    // Set pivot at midpoint of values
     int pivot = (lb + ub) / 2;
-    // set sm and lg indicators
+    // Set sm and lg indicators
     int sm = lb + 1;
     int lg = ub;
-    // swap pivot and initial element in values
+    // Swap pivot and initial element in values
     swap(values, pivot, lb);
-    // while sm indicator is strictly less than lg, compare the element at sm to the pivot element 
+    // While sm indicator is strictly less than lg, compare the element at sm to the pivot element 
     while (sm != lg) {
-      // if the pivot element precedes the element at sm, 
-      // swap the element at sm with the element at lg, and decrement lg
+      // If the pivot element precedes the element at sm, 
+      // Swap the element at sm with the element at lg, and decrement lg
       if (comparator.compare(values[lg - 1], values[lb]) > 0) {
         lg--;
       } else if (comparator.compare(values[sm], values[lb]) <= 0) {
-        // progress the sm indicator
+        // Progress the sm indicator
         sm++;
       } else {
         swap(values, sm, lg - 1);
       } // else
     } // while
-    // swap the pivot element back to its original position (midpoint)
+    // Swap the pivot element back to its original position (midpoint)
     swap(values, lb, sm - 1);
-    // return the index of the pivot element
+    // Return the index of the pivot element
     return sm - 1;
   } // partition(T[], int, int, Comparator<? super T>)
 
