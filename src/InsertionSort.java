@@ -41,13 +41,13 @@ public class InsertionSort implements Sorter {
    */
   static <T> void insertionSort(T[] values, int lb, int ub, Comparator<? super T> comparator) {
     // For each index between the upper and lower bound, exclusive...
-    for (int i = lb + 1; i < (ub - lb); i++) {
+    for (int i = lb + 1; i < ub; i++) {
       // Store element of values at index i
       T current = values[i];
       // Find previous index
       int previous = i - 1;
       // While 0 <= previous, and the element at previous index follows the current element
-      while (0 <= previous && (comparator.compare(values[previous], current) > 0)) {
+      while (previous >= lb && (comparator.compare(values[previous], current) > 0)) {
         // Move previous one index to the right, decrement previous
         values[previous + 1] = values[previous];
         previous--;

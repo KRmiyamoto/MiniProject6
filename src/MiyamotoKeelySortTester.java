@@ -13,6 +13,6 @@ public class MiyamotoKeelySortTester extends SortTester {
     super();
     Sorter mySorter = new MiyamotoKeelySort();
     this.sorter = mySorter;
-  } // QuicksortTester()
+  } // MiyamotoKeelySortTester()
 
-} // class QuicksortTester
+} // class MiyamotoKeelySortTester
