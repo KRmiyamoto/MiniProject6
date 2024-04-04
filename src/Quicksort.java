@@ -38,7 +38,7 @@ public class Quicksort implements Sorter {
    * @param i The index of one element to be swapped. Note 0 <= i < values.length.
    * @param j The index of one element to be swapped. Note 0 <= j < values.length.
    */
-  private static <T> void swap(T[] values, int i, int j) {
+  public static <T> void swap(T[] values, int i, int j) {
     T temp = values[i];
     values[i] = values[j];
     values[j] = temp;

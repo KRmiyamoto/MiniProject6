@@ -88,14 +88,17 @@ public class SortTester {
   } // arrayWithDuplicatesTest
 
   /**
-   * This test generates of an Integer array of a random length in the interval [0, 10000]
-   * and in which each element is a randomly generated Integer in the interval [0, 10000].
+   * This test generates of an Integer array of a random length in the interval [0, 10000].
+   * The array is initially sorted, and copy is made. The array is then mixed up (using 'swap').
+   * After sort is applied, the newly sorted 'arr' is compared to its originally sorted 'copy'.
    */
   @Test
   public void testWithRand() {
-    Integer[] arr = makeArray();
+    Integer[] arr = makeSortedArray();
+    Integer[] copy = arr.clone();
+    mixArr(arr);
     sorter.sort(arr, (x,y) -> x.compareTo(y));
-    assertTrue(isSorted(arr));
+    assertArrayEquals(arr, copy);
   } // testWithRand
 
   // +---------------------------+---------------------------
@@ -104,43 +107,41 @@ public class SortTester {
 
   // Define max size and max element value 
   private static int MAX_ARRAY_SIZE = 10000;
-  private static int MAX_ARRAY_VALUE = 10000;
 
   /**
-   * Method to generate array of random size and with random Integer elements
+   * Method to generate a sorted array of random size
    * @return Integer[] ret
    */
-  private static Integer[] makeArray() {
+  private static Integer[] makeSortedArray() {
     // Initialize rand
     Random rand = new Random();
 
     // Define array size
     int size = rand.nextInt(MAX_ARRAY_SIZE);
+
     // Declare array of 'size'
     Integer[] ret = new Integer[size];
 
-    // Initialize array with random Integers
+    // Initialize array (note that array is sorted 
+    // since ret[i] < ret[i+1] for all 0 <= i < ret.length - 2)
     for (int i = 0; i < size; i++) {
-      ret[i] = rand.nextInt(MAX_ARRAY_VALUE);
+      ret[i] = i;
     } // for
     return ret;
   } // makeArray()
 
   /**
-   * Method to check if an Integer array is sorted
+   * Method to mix up a sorted array
    * @param arr (an array of Integers)
-   * @return true if array is sorted, false otherwise.
    */
-  private static boolean isSorted(Integer[] arr) {
+  private static void mixArr(Integer[] arr) {
+    // Initialize rand
+    Random rand = new Random();
     // For each non-last index in the array
     for (int i = 0; i < arr.length - 1; i++) {
-      // Check if element index is greater than next element
-      if (arr[i] > arr[i + 1]) {
-        // If so, return false.
-        return false;
-      } // if
+      // Swap each index with an element at a random index
+      Quicksort.swap(arr, i, rand.nextInt(arr.length - 1));
     } // for
-    return true;
-  } // isSorted(arr)
+  } // mixArr(arr)
 
 } // class SortTester
